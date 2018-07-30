@@ -19,7 +19,7 @@ class DinosaurTest extends TestCase
     public function testDinosaurIsNotShrunk(){
         $dinosaur = new Dinosaur();
         $dinosaur->setLength(15);
-        $this->assertGreaterThan(15, $dinosaur->getLength(), 'Did you put it in washing machine');
+        $this->assertGreaterThan(12, $dinosaur->getLength(), 'Did you put it in washing machine');
     }
 
     public function testReturnsFullSpecificationOfDinosaur(){
