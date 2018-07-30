@@ -18,7 +18,7 @@ class DinosaurFactoryTest extends TestCase
         $this->factory = new DinosaurFactory();
     }
 
-    public function testIsGrowsAVelociraptor()
+    public function testItGrowsAVelociraptor()
     {
         $dinosaur = $this->factory->growVelociraptors(5);
 
@@ -26,5 +26,10 @@ class DinosaurFactoryTest extends TestCase
         $this->assertInternalType('string', $dinosaur->getGenus());
         $this->assertEquals('Velociraptor', $dinosaur->getGenus());
         $this->assertSame(5, $dinosaur->getLength());
+    }
+
+    public function testItGrowsATriceraptors()
+    {
+        $this->markTestIncomplete('Waiting for confirmation from GenLab');
     }
 }
