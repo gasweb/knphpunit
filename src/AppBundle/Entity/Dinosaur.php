@@ -50,4 +50,9 @@ class Dinosaur
         $this->getLength()
         );
     }
+
+    public function getGenus()
+    {
+        return $this->genus;
+    }
 }
