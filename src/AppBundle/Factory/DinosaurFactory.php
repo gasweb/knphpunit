@@ -12,7 +12,7 @@ class DinosaurFactory
 
     }
 
-    public function createDinosaur(string $genus, bool $isCarnivorous, int $length)
+    public function createDinosaur(string $genus, bool $isCarnivorous, int $length): Dinosaur
     {
         $dinosaur = new Dinosaur($genus, $isCarnivorous);
 
