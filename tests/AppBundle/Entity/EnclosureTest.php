@@ -31,4 +31,15 @@ class EnclosureTest extends TestCase
     $this->expectException(NotBufferException::class);
     $enclosure->addDinosaur(new Dinosaur('Velociraptor', true));
 }
+
+    /**
+     * @expectedException \AppBundle\Exception\NotBufferException
+     */
+    public function testItDoesNotAllowToAddNonCarnivorousDinosaursToCarnivorousEnclosure()
+{
+    $enclosure = new Enclosure();
+    $enclosure->addDinosaur(new Dinosaur('Velociraptor', true));
+    $enclosure->addDinosaur(new Dinosaur());
+
+}
 }
