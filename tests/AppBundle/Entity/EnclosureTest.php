@@ -11,7 +11,7 @@ class EnclosureTest extends TestCase
     public function testItHasNoDinosaursByDefault()
     {
         $enclosure = new Enclosure();
-        $this->assertCount(0, $enclosure->getDinosaurs());
+        $this->assertEmpty($enclosure->getDinosaurs());
 
     }
 
