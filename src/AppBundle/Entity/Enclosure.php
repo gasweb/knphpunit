@@ -31,5 +31,10 @@ class Enclosure
         return $this->dinosaurs;
     }
 
+    public function addDinosaur(Dinosaur $dinosaur): void
+    {
+        $this->dinosaurs[] = $dinosaur;
+    }
+
 
 }
