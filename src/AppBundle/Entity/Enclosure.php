@@ -1,6 +1,7 @@
 <?php
 namespace AppBundle\Entity;
 
+use AppBundle\Exception\NotBufferException;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -33,8 +34,19 @@ class Enclosure
 
     public function addDinosaur(Dinosaur $dinosaur): void
     {
+        if (!$this->canAddDinosaur($dinosaur))
+        {
+            throw new NotBufferException();
+        }
         $this->dinosaurs[] = $dinosaur;
     }
+
+    private function canAddDinosaur(Dinosaur $dinosaur): bool
+    {
+        return count($this->dinosaurs) === 0 || $this->dinosaurs->first()->isCarnivorous() === $dinosaur->isCarnivorous();
+    }
+
+
 
 
 }
